@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: container-1
-        image: vishalgogula123/devops:movie
+        image: vishalgogula123/devops:bus
         ports:
         - containerPort: 80
         envFrom:
