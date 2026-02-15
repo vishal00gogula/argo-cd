@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swiggy-deployment
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: swiggy
+  template:
+    metadata:
+      labels:
+        app: swiggy
+    spec:
+      containers:
+      - name: container-1
+        image: vishalgogula/devops:movie
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+               name: swiggy-config
+          - secretRef:
+              name: swiggy-secret
+
+
+
