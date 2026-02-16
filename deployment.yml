@@ -12,12 +12,12 @@ spec:
     metadata:
       labels:
         app: swiggy
-    spec:
-      strategy:
-        type: RollingUpdate
-        rollingUpdate:
-          maxSurge: 3
-          maxUnavailable : 3
+        
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable : 3
 
       containers:
       - name: container-1
