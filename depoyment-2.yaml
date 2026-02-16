@@ -30,8 +30,3 @@ spec:
           image: vishalgogula123/devops:bus
           ports:
             - containerPort: 80
-          envFrom:
-            - configMapRef:
-                name: swiggy-config
-            - secretRef:
-                name: swiggy-secret
