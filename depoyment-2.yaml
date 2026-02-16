@@ -17,12 +17,12 @@ spec:
 
   selector:
     matchLabels:
-      app: swiggy
+      app: zomato
       env: green
   template:
     metadata:
       labels:
-        app: swiggy
+        app: zomato
         env: green
     spec:
       containers:
