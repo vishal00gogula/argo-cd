@@ -16,8 +16,8 @@ spec:
       strategy:
         type: RollingUpdate
         rollingUpdate:
-          maxUnavailable : 1
-          maxSurge: 1
+          maxSurge: 3
+          maxUnavailable : 3
 
       containers:
       - name: container-1
