@@ -5,27 +5,29 @@ metadata:
   name: swiggy-deployment
 spec:
   replicas: 10
-  selector:
-    matchLabels:
-      app: swiggy
-  template:
-    metadata:
-      labels:
-        app: swiggy
-        
+
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 3
-      maxUnavailable : 3
+      maxUnavailable: 3
 
+  selector:
+    matchLabels:
+      app: swiggy
+
+  template:
+    metadata:
+      labels:
+        app: swiggy
+    spec:
       containers:
-      - name: container-1
-        image: vishalgogula123/devops:movie
-        ports:
-        - containerPort: 80
-        envFrom:
-          - configMapRef:
-               name: swiggy-config
-          - secretRef:
-              name: swiggy-secret
+        - name: container-1
+          image: vishalgogula123/devops:movie
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: swiggy-config
+            - secretRef:
+                name: swiggy-secret
