@@ -13,6 +13,12 @@ spec:
       labels:
         app: swiggy
     spec:
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          maxUnavailable : 1
+          maxSurge: 1
+
       containers:
       - name: container-1
         image: vishalgogula123/devops:dm
@@ -23,6 +29,3 @@ spec:
                name: swiggy-config
           - secretRef:
               name: swiggy-secret
-
-
-
