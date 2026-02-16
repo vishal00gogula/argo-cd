@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swiggy-deployment
+  name: zomato-deployment
   labels:
     env: green
 spec:
